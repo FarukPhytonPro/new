@@ -1,0 +1,66 @@
+import discord
+from discord.ext import commands
+from bot_mantik import gen_pass
+import random
+import os
+print(os.listdir('resimler'))
+img_name = os.listdir('resimler')
+
+
+
+
+a = random.randint(1, 2)
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+
+@bot.command()
+async def yardım(ctx):
+    await ctx.send(f'ne konuda yardım istersin?')
+
+    @bot.command()
+    async def çöp(ctx):
+        await ctx.send(f'Herkesi bilgilendirip insanlara yardım etmesini sağlıya bilirsin veya ilgili bir kurumla görüşüp bu durumus söyleyebilirsin')
+        with open('resimler\çöp.jpg', 'rb') as f:
+            picture = discord.File(f)
+        # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+        await ctx.send(file=picture)
+    
+    @bot.command()
+    async def kirlilik(ctx):
+        await ctx.send(f'ne tür bir kirrlilik bu?')
+
+        @bot.command()
+        async def hava(ctx):
+            await ctx.send(f'bu durumda yakınlarda bir fabrika olabilir bu fabrikayla iletişime geçip filtre kullanmasını isteye bilirsin')
+            with open('resimler\hava.jpg', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
+        
+        @bot.command()
+        async def su(ctx):
+            await ctx.send(f'bu durumda yakınlarda bir fabrika olabilir bu fabrikayla iletişime geçip suya atıklarını dökmemesini sağlayabilirsin')
+            with open('resimler\water.png', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
+        
+        @bot.command()
+        async def toprak(ctx):
+            await ctx.send(f'bu durumda yakınlarda bir fabrika olabilir bu fabrikayla iletişime geçip filtre kullanmasını isteye bilirsin bu sayede bulutlarla  karbondiyoksit birleşmeyecek ve asit yağmurları olmayacak ve bu sayede kirli su toprağa karışmayacak')
+            with open('resimler\indir.jpg', 'rb') as f:
+                picture = discord.File(f)
+            # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+            await ctx.send(file=picture)
+
+bot.run("MTEzNjY5ODgwOTQ3MzMwNjcyNA.GIwlw8.XqLwdAFlUsPRR5lGXG0m17gmaTk2Rie80CgZjU")
