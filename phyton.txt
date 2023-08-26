@@ -14,7 +14,7 @@ a = random.randint(1, 2)
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='$', intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 
 
@@ -29,15 +29,16 @@ async def yardım(ctx):
 
     @bot.command()
     async def çöp(ctx):
-        await ctx.send(f'Herkesi bilgilendirip insanlara yardım etmesini sağlıya bilirsin veya ilgili bir kurumla görüşüp bu durumus söyleyebilirsin')
+        await ctx.send(f'Herkesi bilgilendirip insanlara yardım etmesini sağlıya bilirsin veya ilgili bir kurumla görüşüp bu durum söyleyebilirsin')
         with open('resimler\çöp.jpg', 'rb') as f:
             picture = discord.File(f)
         # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
         await ctx.send(file=picture)
+        
     
     @bot.command()
     async def kirlilik(ctx):
-        await ctx.send(f'ne tür bir kirrlilik bu?')
+        await ctx.send(f'ne tür bir kirlilik bu?')
 
         @bot.command()
         async def hava(ctx):
@@ -46,6 +47,8 @@ async def yardım(ctx):
                 picture = discord.File(f)
             # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
             await ctx.send(file=picture)
+            await ctx.send(f'daha fazla bilgi için:')
+            await ctx.send(f'https://www.youtube.com/watch?v=KdJxuQ0pof4')
         
         @bot.command()
         async def su(ctx):
@@ -54,6 +57,8 @@ async def yardım(ctx):
                 picture = discord.File(f)
             # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
             await ctx.send(file=picture)
+            await ctx.send(f'daha fazla bilgi için:')
+            await ctx.send(f'https://www.youtube.com/watch?v=gLtyn6UyCwk')
         
         @bot.command()
         async def toprak(ctx):
@@ -62,5 +67,16 @@ async def yardım(ctx):
                 picture = discord.File(f)
             # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
             await ctx.send(file=picture)
+            await ctx.send(f'daha fazla bilgi için:')
+            await ctx.send(f'https://www.youtube.com/watch?v=EWAzL4Rfbqw')
+    @bot.command()
+    async def sokak_hayvanları(ctx):
+        await ctx.send(f'eğer sokak hayvasları sorun yaşıyorsa onları sahilenebilir veya onları barınağa götürebilirsin')
+        with open('resimler\petting-dog-.png', 'rb') as f:
+            picture = discord.File(f)
+        # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+        await ctx.send(file=picture)
+        await ctx.send(f'daha fazla bilgi için:')
+        await ctx.send(f'https://www.youtube.com/watch?v=pktNdiGk8yw')
 
-bot.run("MTEzNjY5ODgwOTQ3MzMwNjcyNA.GIwlw8.XqLwdAFlUsPRR5lGXG0m17gmaTk2Rie80CgZjU")
+bot.run("MTEzNjY5ODgwOTQ3MzMwNjcyNA.GPF-98.YrRpFWl7EQp-WX9szA26WyHlWKdFSM5pxcVsdo")
